@@ -1,0 +1,449 @@
+# Instincts generated from https://github.com/anyaoqi/skill-manager
+# Generated: 2026-04-13T10:35:47.906Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: skill-manager-commit-conventional
+trigger: "when writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: https://github.com/anyaoqi/skill-manager
+---
+
+# Skill Manager Commit Conventional
+
+## Action
+
+Use conventional commit format with prefixes: fix, refactor
+
+## Evidence
+
+- 5 commits analyzed
+- Detected conventional commit pattern
+- Examples: fix: sync version from tag during CI/CD build, refactor: rename project to SkillManager
+
+---
+id: skill-manager-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/anyaoqi/skill-manager
+---
+
+# Skill Manager Commit Length
+
+## Action
+
+Keep commit messages concise (~44 characters)
+
+## Evidence
+
+- Average commit message length: 44 chars
+- Based on 5 commits
+
+---
+id: skill-manager-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/anyaoqi/skill-manager
+---
+
+# Skill Manager Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: skill-manager-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/anyaoqi/skill-manager
+---
+
+# Skill Manager Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: skill-manager-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/anyaoqi/skill-manager
+---
+
+# Skill Manager Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: skill-manager-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/anyaoqi/skill-manager
+---
+
+# Skill Manager Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: skill-manager-workflow-update-project-metadata-across-configs
+trigger: "when doing update project metadata across configs"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/anyaoqi/skill-manager
+---
+
+# Skill Manager Workflow Update Project Metadata Across Configs
+
+## Action
+
+Follow the update-project-metadata-across-configs workflow:
+1. Update package.json with new name or version
+2. Update tauri.conf.json with new productName, identifier, or version
+3. Update Cargo.toml with new package name, lib name, or version
+4. Update workflow files (e.g., .github/workflows/tauri.yml) to match new metadata
+5. Update documentation files (e.g., README.md, README_CN.md) to reflect new name/version
+6. Update other related config files (e.g., windows-manifest.xml, types.ts comments)
+7. Commit all changes together
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: package.json, src-tauri/tauri.conf.json, src-tauri/Cargo.toml
+
+---
+id: skill-manager-workflow-add-and-remove-npm-scripts-and-dependencies
+trigger: "when doing add and remove npm scripts and dependencies"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/anyaoqi/skill-manager
+---
+
+# Skill Manager Workflow Add And Remove Npm Scripts And Dependencies
+
+## Action
+
+Follow the add-and-remove-npm-scripts-and-dependencies workflow:
+1. Add or remove script in package.json
+2. Add or remove dependency in package.json
+3. Update lock files (pnpm-lock.yaml, Cargo.lock) accordingly
+4. Commit all related changes together
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: package.json, pnpm-lock.yaml, src-tauri/Cargo.lock
+
+---
+id: skill-manager-instinct-camelcase-files
+trigger: "When creating or renaming a file in the codebase"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: anyaoqi/skill-manager
+---
+
+# Skill Manager Instinct Camelcase Files
+
+## Action
+
+Use camelCase for file names
+
+## Evidence
+
+- Pattern in namingConventions.files: camelCase
+
+---
+id: skill-manager-instinct-camelcase-functions
+trigger: "When defining a function"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: anyaoqi/skill-manager
+---
+
+# Skill Manager Instinct Camelcase Functions
+
+## Action
+
+Name the function using camelCase
+
+## Evidence
+
+- Pattern in namingConventions.functions: camelCase
+
+---
+id: skill-manager-instinct-pascalcase-classes
+trigger: "When defining a class or struct"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: anyaoqi/skill-manager
+---
+
+# Skill Manager Instinct Pascalcase Classes
+
+## Action
+
+Name the class using PascalCase
+
+## Evidence
+
+- Pattern in namingConventions.classes: PascalCase
+
+---
+id: skill-manager-instinct-screaming-constants
+trigger: "When declaring a constant"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: anyaoqi/skill-manager
+---
+
+# Skill Manager Instinct Screaming Constants
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for constant names
+
+## Evidence
+
+- Pattern in namingConventions.constants: SCREAMING_SNAKE_CASE
+
+---
+id: skill-manager-instinct-relative-imports
+trigger: "When importing modules"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: anyaoqi/skill-manager
+---
+
+# Skill Manager Instinct Relative Imports
+
+## Action
+
+Use relative import paths
+
+## Evidence
+
+- Pattern in importStyle: relative
+
+---
+id: skill-manager-instinct-named-exports
+trigger: "When exporting modules or functions"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: anyaoqi/skill-manager
+---
+
+# Skill Manager Instinct Named Exports
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in exportStyle: named
+
+---
+id: skill-manager-instinct-try-catch-errors
+trigger: "When handling errors in code"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: anyaoqi/skill-manager
+---
+
+# Skill Manager Instinct Try Catch Errors
+
+## Action
+
+Use try-catch blocks for error handling
+
+## Evidence
+
+- Pattern in errorHandling.style: try-catch
+
+---
+id: skill-manager-instinct-no-custom-error-classes
+trigger: "When implementing error handling"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: anyaoqi/skill-manager
+---
+
+# Skill Manager Instinct No Custom Error Classes
+
+## Action
+
+Avoid defining custom error classes
+
+## Evidence
+
+- Pattern in errorHandling.customErrorClasses: false
+
+---
+id: skill-manager-instinct-no-global-error-handler
+trigger: "When considering global error handling"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: anyaoqi/skill-manager
+---
+
+# Skill Manager Instinct No Global Error Handler
+
+## Action
+
+Do not implement a global error handler
+
+## Evidence
+
+- Pattern in errorHandling.globalHandler: false
+
+---
+id: skill-manager-instinct-git-conventional-commits
+trigger: "When making a git commit"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: anyaoqi/skill-manager
+---
+
+# Skill Manager Instinct Git Conventional Commits
+
+## Action
+
+Format the commit message using the conventional commit style (e.g., 'fix: ...', 'refactor: ...')
+
+## Evidence
+
+- Pattern in commits.type: conventional
+- Examples: 'fix: sync version from tag during CI/CD build', 'refactor: rename project to SkillManager'
+
+---
+id: skill-manager-instinct-git-commit-length
+trigger: "When writing a commit message"
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: anyaoqi/skill-manager
+---
+
+# Skill Manager Instinct Git Commit Length
+
+## Action
+
+Keep the commit message concise, around 44 characters on average
+
+## Evidence
+
+- Pattern in commits.averageLength: 44
+
+---
+id: skill-manager-instinct-update-project-metadata
+trigger: "When project name, version, or related metadata needs to be changed across configs for release, rebranding, or CI/CD"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: anyaoqi/skill-manager
+---
+
+# Skill Manager Instinct Update Project Metadata
+
+## Action
+
+Synchronize metadata in package.json, tauri.conf.json, Cargo.toml, workflow files, documentation, and related configs, then commit all changes together
+
+## Evidence
+
+- Workflow: update-project-metadata-across-configs
+- Commit sequence and files involved in workflow definition
+
+---
+id: skill-manager-instinct-update-npm-scripts-deps
+trigger: "When adding or removing npm scripts or dependencies to address workflow issues or features"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: anyaoqi/skill-manager
+---
+
+# Skill Manager Instinct Update Npm Scripts Deps
+
+## Action
+
+Update package.json scripts/dependencies, update lock files (pnpm-lock.yaml, Cargo.lock), and commit all changes together
+
+## Evidence
+
+- Workflow: add-and-remove-npm-scripts-and-dependencies
+- Commit sequence and files involved in workflow definition
+
+---
+id: skill-manager-instinct-tests-in-separate-folder
+trigger: "When adding new tests"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: anyaoqi/skill-manager
+---
+
+# Skill Manager Instinct Tests In Separate Folder
+
+## Action
+
+Place test files in a separate folder from source code
+
+## Evidence
+
+- Pattern in architecture.folderStructure.testLocation: separate
+
